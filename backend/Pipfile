@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+psycopg2-binary = "*"
+gunicorn = "*"
+uvicorn = {extras = ["standard"], version = "*"}
+requests = "*"
+Django = ">=4.0.0,<5.0.0"
+
+[requires]
+python_version = "3.10"

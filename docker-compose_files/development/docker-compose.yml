@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  web:
+    build: ../../backend
+    volumes:
+      - ../../backend:/app
+    ports:
+      - "50000:80"
+    environment:
+      - DEV=true
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:14
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=django
+      - POSTGRES_PASSWORD=password
+
+volumes:
+  db-data:
